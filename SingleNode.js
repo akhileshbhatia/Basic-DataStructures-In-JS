@@ -1,5 +1,5 @@
 export class SingleNode {
-    constructor(data, next = null) {
+    constructor(data) {
         this.data = data;
         this.next = null;
     }
