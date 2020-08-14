@@ -58,6 +58,7 @@ export class LinkedList {
 
     getDataInLinkedList() {
       const resultArray = [];
+      if (this.head === null) return resultArray;
       let current = this.head;
       while(current.next != null) {
         resultArray.push(current.data);
