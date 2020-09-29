@@ -9,7 +9,6 @@ export class LinkedList {
         const singleNode = new SingleNode(data);
         singleNode.next = this.head;
         this.head = singleNode;
-        console.log('Node inserted at beginning');
     }
 
     insertAtEnd(data) {
@@ -22,7 +21,6 @@ export class LinkedList {
         }
         const singleNode = new SingleNode(data);
         current.next = singleNode;
-        console.log('Node inserted at end');
     }
 
     insertAtPosition(pos, data) {
@@ -45,7 +43,6 @@ export class LinkedList {
         const singleNode = new SingleNode(data);
         singleNode.next = current.next;
         current.next = singleNode;
-        console.log('Node inserted at position ', pos);
     }
 
     getSize() {
@@ -57,5 +54,17 @@ export class LinkedList {
             size++;
         }
         return size;
+    }
+
+    getDataInLinkedList() {
+      const resultArray = [];
+      if (this.head === null) return resultArray;
+      let current = this.head;
+      while(current.next != null) {
+        resultArray.push(current.data);
+        current = current.next;
+      }
+      resultArray.push(current.data); //insert last element as well
+      return resultArray;
     }
 }
